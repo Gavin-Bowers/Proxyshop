@@ -17,35 +17,43 @@ retro.psd:
   templates:
     Retro:
       RetroTemplate:
-        - normal
+      - normal
       RetroLevelerTemplate:
-        - leveler
+      - leveler
       RetroPrototypeTemplate:
-        - prototype
+      - prototype
       RetroAdventureTemplate:
-        - adventure
+      - adventure
       RetroMutateTemplate:
-        - mutate
+      - mutate
       RetroBattleTemplate:
-        - battle
+      - battle
       RetroPWTemplate:
-        - planeswalker
+      - planeswalker
       RetroSagaTemplate:
-        - saga
+      - saga
       RetroClassTemplate:
-        - class
+      - class
       RetroTFTemplate:
-        - transform_front
-        - transform_back
+      - transform_front
+      - transform_back
       RetroMDFCTemplate:
-        - mdfc_front
-        - mdfc_back
+      - mdfc_front
+      - mdfc_back
       RetroPWTFTemplate:
-        - pw_tf_front
-        - pw_tf_back
+      - pw_tf_front
+      - pw_tf_back
       RetroPWMDFCTemplate:
-        - pw_mdfc_front
-        - pw_mdfc_back
+      - pw_mdfc_front
+      - pw_mdfc_back
+
+retro-split.psd:
+  id: ''
+  desc: "Retro split frame"
+  templates:
+    Retro:
+      RetroSplitTemplate:
+      - split
 
 classic-remastered.psd:
   id: '1DYbRMtKRZs5EeRYLl6i5lodzMyhTnIdI'
