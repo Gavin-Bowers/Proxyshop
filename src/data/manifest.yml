@@ -11,6 +11,50 @@ normal-classic.psd:
   desc: "Classic frame based on 1997-era MTG cards."
   templates: { Classic: ClassicTemplate }
 
+retro.psd:
+  id: ''
+  desc: 'Retro frame based on modern old border cards. Provided by Gavin.'
+  templates:
+    Retro:
+      RetroTemplate:
+      - normal
+      RetroLevelerTemplate:
+      - leveler
+      RetroPrototypeTemplate:
+      - prototype
+      RetroAdventureTemplate:
+      - adventure
+      RetroMutateTemplate:
+      - mutate
+      RetroBattleTemplate:
+      - battle
+      RetroPWTemplate:
+      - planeswalker
+      RetroSagaTemplate:
+      - saga
+      RetroClassTemplate:
+      - class
+      RetroTFTemplate:
+      - transform_front
+      - transform_back
+      RetroMDFCTemplate:
+      - mdfc_front
+      - mdfc_back
+      RetroPWTFTemplate:
+      - pw_tf_front
+      - pw_tf_back
+      RetroPWMDFCTemplate:
+      - pw_mdfc_front
+      - pw_mdfc_back
+
+retro-split.psd:
+  id: ''
+  desc: "Retro split frame"
+  templates:
+    Retro:
+      RetroSplitTemplate:
+      - split
+
 classic-remastered.psd:
   id: '1DYbRMtKRZs5EeRYLl6i5lodzMyhTnIdI'
   desc: "A remastered take on the classic 1997 frame treatment, assets provided by iDerp."

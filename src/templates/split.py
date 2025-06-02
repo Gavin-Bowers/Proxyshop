@@ -25,15 +25,16 @@ from src.text_layers import FormattedTextField, FormattedTextArea, ScaledTextFie
 from src.utils.adobe import ReferenceLayer
 
 """
-* Template Classes
+* Modifier Classes
 """
 
 
-class SplitTemplate(BaseTemplate):
+class SplitMod(BaseTemplate):
     """
-    * A template for split cards introduced in Invasion.
+    * A template modifier for split cards introduced in Invasion.
 
     Adds:
+        * support for fuse cards with textbox overlapping both cards
         * Must return all properties shared by both halves as a list of two items (left, right).
         * Must overwrite a lot of core functionality to navigate rendering 2 cards in one template.
 
@@ -77,7 +78,7 @@ class SplitTemplate(BaseTemplate):
         return [
             bool(
                 len(self.layout.flavor_text[i]) <= 1
-                and len(self.layout.oracle_text[i]) <= 70
+                and len(self.layout.oracle_text[i]) <= 40
                 and "\n" not in self.layout.oracle_text[i]
             ) for i in range(2)
         ]
@@ -158,10 +159,10 @@ class SplitTemplate(BaseTemplate):
         """Fuse pinlines group."""
         return psd.getLayerSet(LAYERS.PINLINES, self.fuse_group)
 
-    @cached_property
-    def text_group(self) -> Optional[LayerSet]:
-        """One text and icons group located in the 'Left' side group."""
-        return psd.getLayerSet(LAYERS.TEXT_AND_ICONS, LAYERS.LEFT)
+    # @cached_property
+    # def text_group(self) -> Optional[LayerSet]:
+    #     """One text and icons group located in the 'Left' side group."""
+    #     return psd.getLayerSet(LAYERS.TEXT_AND_ICONS, LAYERS.LEFT)
 
     @cached_property
     def card_groups(self):
@@ -495,7 +496,7 @@ class SplitTemplate(BaseTemplate):
                 group=self.pinlines_groups[i],
                 colors=self.pinlines_colors[i])
 
-        # Fuse addone
+        # Fuse addon
         if self.is_fuse:
             psd.getLayer(f'{LAYERS.BORDER} Fuse').visible = True
             self.fuse_group.visible = True
@@ -541,3 +542,13 @@ class SplitTemplate(BaseTemplate):
                     reference=self.textbox_reference[i],
                     divider=self.divider_layer[i],
                     centered=self.is_centered[i]))
+
+
+"""
+* Template Classes
+"""
+
+
+class SplitTemplate(SplitMod, BaseTemplate):
+    """Split template using rasterized frame elements."""
+    pass

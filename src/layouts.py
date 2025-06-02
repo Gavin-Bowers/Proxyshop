@@ -1105,8 +1105,12 @@ class LevelerLayout(NormalLayout):
 
     @cached_property
     def middle_text(self) -> str:
-        """Rules text applied at middle stage."""
-        return self.leveler_match[4] if self.leveler_match else ''
+        """Rules text applied at middle stage. Returns a space for empty abilities so they render properly"""
+        if self.leveler_match:
+            if self.leveler_match[4] == '':
+                return ' '
+            return self.leveler_match[4]
+        return ''
 
     @cached_property
     def bottom_level(self) -> str:
@@ -1319,6 +1323,14 @@ class SplitLayout(NormalLayout):
                 count.append(w)
             return ' '.join(count)
         return artist
+
+    @cached_property
+    def artists(self) -> list[str]:
+        """Card artist names, using Scryfall card data"""
+        if self.file.get('artist'):
+            return [self.file['artist'], self.file['artist']]
+
+        return [c.get('artist', 'Unknown') for c in self.card]
 
     """
     * Symbols
