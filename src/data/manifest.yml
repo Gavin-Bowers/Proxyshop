@@ -12,7 +12,7 @@ normal-classic.psd:
   templates: { Classic: ClassicTemplate }
 
 retro.psd:
-  id: ''
+  id: '19QR-p036jvaP6tvXdkfPdyrnkGvK6Nco'
   desc: 'Retro frame based on modern old border cards. Provided by Gavin.'
   templates:
     Retro:
@@ -48,7 +48,7 @@ retro.psd:
       - pw_mdfc_back
 
 retro-split.psd:
-  id: ''
+  id: '19oYH4Gq58TdWd-MSBbaIQoXohHHPOUlD'
   desc: "Retro split frame"
   templates:
     Retro:
